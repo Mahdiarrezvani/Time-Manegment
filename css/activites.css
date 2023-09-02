@@ -272,9 +272,15 @@ body {
   text-transform: uppercase;
 }
 
-.container-last-update {
-  background-color: red;
-  height: 100px;
+.last-update {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .title {
@@ -292,6 +298,10 @@ body {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 7px;
+}
+
+.active {
+  background-color: #252525;
 }
 
 .btn-activite {
@@ -384,15 +394,15 @@ body {
   margin-right: 9px;
 }
 
+.first-one .name-first {
+  color: #00A355;
+}
+
 .last-one {
   border: 3px solid #ff2b2b;
 }
 
-.name-first {
-  color: #00A355;
-}
-
-.name-last {
+.last-one .name-last {
   color: #ff2b2b;
 }
 /*# sourceMappingURL=activites.css.map */

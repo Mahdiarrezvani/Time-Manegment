@@ -1,5 +1,5 @@
 import { dataBase } from "../database/dataBaseChallenges.js";
-import { backHomePage } from "./mixina.js";
+import { backHomePage } from "./mixins.js";
 backHomePage();
 // ! متغیر ها
 let typeChallenge = 'code';
@@ -9,43 +9,37 @@ let numberChallengeElems;
 let subject = document.querySelector('.subject');
 subject.innerHTML = typeChallenge;
 // 
-let activeElemChallenge = document.querySelector('.active-challenge');
-activeElemChallenge.style.backgroundColor = "#252525";
-// 
 let sectionBtnNumber = document.querySelector('.section-btn-number');
 function createBtn() {
     sectionBtnNumber.innerHTML = "";
     let number = 1;
     let lengthArray = dataBase[typeChallenge];
     lengthArray.forEach(function () {
-        sectionBtnNumber.insertAdjacentHTML('beforeend', `<p class="number-challenge active-btn${number}">${number}</p>`);
+        sectionBtnNumber.insertAdjacentHTML('beforeend', `<p class="number-challenge">${number}</p>`);
         number++;;
     });
-    let activeElemBtn = document.querySelector('.active-btn1');
-    activeElemBtn.style.backgroundColor = "#252525";
+    let numberChallenge1 = document.querySelectorAll('.number-challenge')
+    numberChallenge1[0].classList.add('active-number');
+    // 
     numberChallengeElems = document.querySelectorAll('.number-challenge');
 }
 createBtn();
-// 
+// for number
 function bgColorBtns() {
-    let activeBtns = document.querySelectorAll('.number-challenge');
-    activeBtns.forEach(function (e) {
-        e.style.backgroundColor = "transparent";
-    })
+    let activeBtn = document.querySelector('.active-number');
+    activeBtn.classList.remove('active-number');
 }
-function bgColorBtnsChallenge() {
-    let activeBtnsChallenge = document.querySelectorAll('.btn-asdasdsd');
-    activeBtnsChallenge.forEach(function (e) {
-        e.style.backgroundColor = "transparent";
-    })
+function removeClassActive() {
+    let activeBtn = document.querySelector('.active');
+    activeBtn.classList.remove('active');
 }
 // 
-let challengeBtn = document.querySelectorAll('.btn-asdasdsd');
+let challengeBtn = document.querySelectorAll('.btn-challenge');
 function createBtnChallnge() {
     challengeBtn.forEach(function (elem) {
         elem.addEventListener('click', function (e) {
-            bgColorBtnsChallenge();
-            e.target.style.backgroundColor = "#252525";
+            removeClassActive();
+            e.target.classList.add('active');
             typeChallenge = e.target.attributes.type.nodeValue;
             subject.innerHTML = typeChallenge;
             arrayChallenge = dataBase[typeChallenge][0]
@@ -60,7 +54,7 @@ function createNumberBtn() {
     numberChallengeElems.forEach(function (elem) {
         elem.addEventListener('click', function (e) {
             bgColorBtns();
-            e.target.style.backgroundColor = "#252525";
+            e.target.classList.add('active-number');
             numberChallenge = e.target.innerHTML - 1;
             arrayChallenge = dataBase[typeChallenge][numberChallenge];
             infoChallenFunc();

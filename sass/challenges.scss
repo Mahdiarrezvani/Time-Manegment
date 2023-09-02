@@ -10,17 +10,23 @@ $color: #830000;
     text-align: center;
 }
 
-.asdasd {
+.activite-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 7px;
 }
 
-.btn-asdasdsd {
+.btn-challenge {
     border-radius: 7px;
     padding: 20px 0;
     text-align: center;
     border: 2px solid #3B3B3B;
+}
+
+// دکمه فعال
+.active,
+.active-number {
+    background-color: #252525;
 }
 
 .section-title {
@@ -39,14 +45,13 @@ $color: #830000;
 
 .section-btn-number {
     overflow: auto;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 .section-btn-number p {
     display: inline-block;
     padding: 8px 13px;
     flex-shrink: 0;
-    border-radius: 6px;
     border-radius: 6px;
     border: 1px solid #313131;
 }

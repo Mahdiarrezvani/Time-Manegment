@@ -16,6 +16,10 @@ $color: #787878;
     grid-gap: 7px;
 }
 
+.active {
+    background-color: #252525;
+}
+
 .btn-activite {
     border-radius: 7px;
     padding: 20px 0;
@@ -94,16 +98,16 @@ $color: #787878;
 .first-one {
     border: 3px solid #00A355;
     margin-right: 9px;
+
+    .name-first {
+        color: #00A355;
+    }
 }
 
 .last-one {
     border: 3px solid #ff2b2b;
-}
 
-.name-first {
-    color: #00A355;
-}
-
-.name-last {
-    color: #ff2b2b;
+    .name-last {
+        color: #ff2b2b;
+    }
 }

@@ -1,40 +1,43 @@
 import { dataBase } from './dataBase.js'
 import { backHomePage } from './mixins.js'
 backHomePage();
-// 
-let subject = "code";
+
+// let activitesContainer = document.querySelector('.activites');
+// let activiteArray = ["learn", "language", "study", "wasted"];
+// function createBtnActiviteEleme() {
+//     activiteArray.forEach(function (value) {
+//         activitesContainer.insertAdjacentHTML('beforeend', `
+//         <p class="btn-activite" name="${value}">${value}</p>`);
+//     });
+// }
+// createBtnActiviteEleme();
 let resultMahdiar = document.querySelector('.mahdiar');
 let resultAbbas = document.querySelector('.abbas');
 let resultAmin = document.querySelector('.amin');
 let subjectElem = document.querySelector('.subject');
 let btnFirst = document.querySelectorAll('.btn-activite');
 let fewDay = document.querySelector('.few-day');
+let subject = "code";
+fewDay.innerHTML = "in " + dataBase[0].length + " day";
 // 
-let activeElem = document.querySelector('.active');
-activeElem.style.backgroundColor = "#252525";
-// باید کلین بشه مثل app.js
-// البته همونم باید کلین بشه
+
 btnFirst.forEach(function (elem) {
     elem.addEventListener('click', function (e) {
         activeFun();
-        e.target.style.backgroundColor = "#252525";
+        e.target.classList.add('active');
         subject = e.target.attributes.name.nodeValue;
-        learnSubject();
         sectionShowResult();
         firstPersonFind()
         lastPersonFind()
         firstOneForWastedTime();
     });
-})
+});
+
 function activeFun() {
-    btnFirst.forEach(function (elem) {
-        elem.style.backgroundColor = "transparent";
-    })
+    let activeBtn = document.querySelector('.active');
+    activeBtn.classList.remove('active')
 }
 
-function learnSubject() {
-    fewDay.innerHTML = "in " + dataBase[0].length + " day";
-}
 // !!!! این کد برای اینه که اگه چیزی اضافه کردی از همون روز محسبه کنه
 //  ? متنیه که میزنه در چند روز یا in 30 day
 // function learnSubject() {
@@ -47,52 +50,47 @@ function learnSubject() {
 //             break;
 //     }
 // }
-let sumMahdiar = 0;
-let sumAmin = 0;
-let sumAbbas = 0;
+
+// let sumMahdiar = 0;
+// let sumAmin = 0;
+// let sumAbbas = 0;
+let sumMahdiar, sumAmin, sumAbbas;
 let array = [];
 // محاسبه جمع موضوع مورد نظر
 function sectionShowResult() {
     subjectElem.innerHTML = subject;
     let information = [
-        { id: 0, name: 'mahdiar', storage: sumMahdiar, elem: resultMahdiar },
-        { id: 1, name: 'amin', storage: sumAmin, elem: resultAmin },
-        { id: 2, name: 'amir abbas', storage: sumAbbas, elem: resultAbbas }
+        { id: 0, name: 'mahdiar', storage: 0, elem: resultMahdiar },
+        { id: 1, name: 'amin', storage: 0, elem: resultAmin },
+        { id: 2, name: 'amir abbas', storage: 0, elem: resultAbbas }
     ];
+
     information.forEach(function (info) {
         info.storage = 0;
         dataBase[info.id].forEach(function (e) {
             info.storage = info.storage + +e[subject];
         });
-        info.elem.innerHTML = `<div><p class="name-person">${info.name}</p> <p class="section-time">time: ${info.storage} min</p></div>${average(info.storage)}`;
+
+        info.elem.innerHTML = `<div><p class="name-person">${info.name}</p> <p class="section-time">time: ${info.storage} min</p></div>${averageFunc(info.storage)}`;
     });
+
     array = [sumMahdiar = information[0].storage, sumAmin = information[1].storage, sumAbbas = information[2].storage]
 }
 
 let firstPerson = null;
-let lastPerson = null;
 function firstPersonFind() {
     let bigger = Math.max(sumAbbas, sumAmin, sumMahdiar);
-    let firstPersonNumber = null;
-    array.forEach(function (e) {
-        if (e == bigger) {
-            return firstPersonNumber = e;
-        }
-    });
-    firstPerson = findPerson(firstPersonNumber);
+    firstPerson = findPerson(bigger);
 }
 
+let lastPerson = null;
 function lastPersonFind() {
     let smaller = Math.min(sumAbbas, sumAmin, sumMahdiar);
-    let lastPersonNumber = null;
-    array.forEach(function (e) {
-        if (e == smaller) {
-            return lastPersonNumber = e;
-        }
-    });
-    lastPerson = findPerson(lastPersonNumber);
+    lastPerson = findPerson(smaller);
 }
+
 // For Wasted Time
+// show last AND first person
 function firstOneForWastedTime() {
     let firstOne = document.querySelector('.first-one');
     let lastOne = document.querySelector('.last-one');
@@ -106,10 +104,11 @@ function firstOneForWastedTime() {
     }
 }
 
-function average(person) {
-    let average = null;
-    average = Math.ceil(person / dataBase[0].length);
-    return `<div>in day : ${average}</div>`;
+function averageFunc(person) {
+    let averageNumber = null;
+    averageNumber = Math.ceil(person / dataBase[0].length);
+    return `<div>per one day : ${averageNumber}</div>`;
+    // return `<div>in one day : ${averageNumber}</div>`;
 }
 // ! برای گرفتن میانگینیه که جدید اضافه میشه و از همون لحظه میانگین میگیره
 // function average(person) {
@@ -124,10 +123,9 @@ function average(person) {
 //     }
 //     return `<div>in day : ${average}</div>`;
 // }
-// یکی دیگه براز اسم متغیر رو خیلی خوب نیست
-function findPerson(s) {
+function findPerson(number) {
     let person = null;
-    switch (s) {
+    switch (number) {
         case sumMahdiar:
             person = "mahdiar";
             break;
@@ -141,7 +139,6 @@ function findPerson(s) {
     }
     return person;
 }
-learnSubject();
 sectionShowResult();
 firstPersonFind()
 lastPersonFind()

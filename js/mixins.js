@@ -6,10 +6,6 @@ export function backHomePage() {
     });
 }
 // 
-// 
-// 
-// 
-// 
 // let activitesContainer = document.querySelector('.activites-container');
 // let sumMahdiar, sumAmin, sumAbbas;
 // function storage(subject) {

@@ -272,9 +272,15 @@ body {
   text-transform: uppercase;
 }
 
-.container-last-update {
-  background-color: red;
-  height: 100px;
+.last-update {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .title {
@@ -286,7 +292,7 @@ body {
   text-align: center;
 }
 
-.asdasd {
+.activite-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -294,11 +300,16 @@ body {
   grid-gap: 7px;
 }
 
-.btn-asdasdsd {
+.btn-challenge {
   border-radius: 7px;
   padding: 20px 0;
   text-align: center;
   border: 2px solid #3B3B3B;
+}
+
+.active,
+.active-number {
+  background-color: #252525;
 }
 
 .section-title {
@@ -317,7 +328,7 @@ body {
 
 .section-btn-number {
   overflow: auto;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .section-btn-number p {
@@ -325,7 +336,6 @@ body {
   padding: 8px 13px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  border-radius: 6px;
   border-radius: 6px;
   border: 1px solid #313131;
 }
