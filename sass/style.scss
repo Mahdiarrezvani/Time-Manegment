@@ -98,23 +98,18 @@ body {
 }
 
 .news {
-
-    .activites-container,
+    .first-one-container,
     .last-one-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
     p {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 }
 
-.mofid {
-    display: flex;
-    justify-content: space-between;
-}
-
+.useful,
 .average {
     display: flex;
     justify-content: space-between;
@@ -122,14 +117,13 @@ body {
 
 .title-news {
     text-align: center;
-    margin-bottom: 15px;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
 }
-.last-update{
+
+.last-update {
     margin-top: 30px;
-    text-align: center;
     font-size: 18px;
     display: flex;
     justify-content: space-around;

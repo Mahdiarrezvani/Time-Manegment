@@ -1,7 +1,7 @@
-import { dataBase } from './dataBase.js'
-let usefulTimeElem = document.querySelector('.mofid');
+import { dataBase } from './dataBase.js';
+let usefulTimeElem = document.querySelector('.useful');
 let subjects = ['code', 'learn', 'english', 'study', 'wasted'];
-let activitesContainer = document.querySelector('.activites-container');
+let firstOneContainer = document.querySelector('.first-one-container');
 let lastOneContainer = document.querySelector('.last-one-container');
 let sumMahdiar, sumAmin, sumAbbas;
 //! storage
@@ -10,9 +10,9 @@ function storage(subject) {
     sumAmin = 0;
     sumAbbas = 0;
     let information = [
-        { id: 0, name: 'mahdiar', storage: sumMahdiar },
-        { id: 1, name: 'amin', storage: sumAmin },
-        { id: 2, name: 'amir abbas', storage: sumAbbas }
+        { id: 0, name: 'mahdiar', storage: 0 },
+        { id: 1, name: 'amin', storage: 0 },
+        { id: 2, name: 'amir abbas', storage: 0 }
     ];
     information.forEach(function (info) {
         dataBase[info.id].forEach(function (e) {
@@ -23,42 +23,31 @@ function storage(subject) {
 }
 //! Firs One
 function firstOne(subject) {
-    let firstPersonNumber = null;
     let number = null;
-    let storages = storage(subject);
+    storage(subject);
     if (subject == 'wasted') {
         number = Math.min(sumAbbas, sumAmin, sumMahdiar);
     } else {
         number = Math.max(sumAbbas, sumAmin, sumMahdiar);
     }
-    storages.forEach(function (e) {
-        if (e == number) {
-            return firstPersonNumber = e;
-        }
-    });
-    let firstPerson = findPerson(firstPersonNumber);
-    activitesContainer.insertAdjacentHTML('beforeend', `
+    let firstPerson = findPerson(number);
+    firstOneContainer.insertAdjacentHTML('beforeend', `
     <p>${subject} : <span>${firstPerson}</span></p>`);
 }
 //! Last One
 function lastOne(subject) {
-    let lastPersonNumber = null;
-    let storages = storage(subject);
+    storage(subject);
     let number = null;
     if (subject == 'wasted') {
         number = Math.max(sumAbbas, sumAmin, sumMahdiar);
     } else {
         number = Math.min(sumAbbas, sumAmin, sumMahdiar);
     }
-    storages.forEach(function (e) {
-        if (e == number) {
-            return lastPersonNumber = e;
-        }
-    });
-    let lastPerson = findPerson(lastPersonNumber);
+    let lastPerson = findPerson(number);
     lastOneContainer.insertAdjacentHTML('beforeend', `
     <p>${subject} : <span>${lastPerson}</span></p>`);
 }
+
 //! Find Person
 function findPerson(number) {
     let person = null;
@@ -75,7 +64,7 @@ function findPerson(number) {
     }
     return person;
 }
-//*
+//! Create Section First AND Last
 subjects.forEach(function (subject) {
     firstOne(subject);
     lastOne(subject);
@@ -83,13 +72,11 @@ subjects.forEach(function (subject) {
 //! Sum Useful Time
 function workMofid() {
     let subjectsMofid = ['code', 'learn', 'english', 'study'];
-    let sumMahdiar = 0;
-    let sumAmin = 0;
-    let sumAbbas = 0;
+    // let sumMahdiar, sumAmin, sumAbbas;
     let information = [
-        { id: 0, name: 'mahdiar', storage: sumMahdiar },
-        { id: 1, name: 'amin', storage: sumAmin },
-        { id: 2, name: 'amir abbas', storage: sumAbbas }
+        { id: 0, name: 'mahdiar', storage: 0 },
+        { id: 1, name: 'amin', storage: 0 },
+        { id: 2, name: 'amir abbas', storage: 0 }
     ];
     information.forEach(function (info) {
         dataBase[info.id].forEach(function (e) {
@@ -97,23 +84,24 @@ function workMofid() {
                 info.storage = info.storage + +e[subject];
             });
         });
-        switch (info.id) {
-            case 0:
-                sumMahdiar = info.storage;
-                break;
-            case 1:
-                sumAmin = info.storage;
-                break;
-            case 2:
-                sumAbbas = info.storage;
-                break;
-        }
+        // switch (info.id) {
+        //     case 0:
+        //         sumMahdiar = info.storage;
+        //         break;
+        //     case 1:
+        //         sumAmin = info.storage;
+        //         break;
+        //     case 2:
+        //         sumAbbas = info.storage;
+        //         break;
+        // }
     });
     usefulTimeElem.innerHTML = `
-    <p>mahdiar: <span>${sumMahdiar}</span></p>
-    <p>amin: <span>${sumAmin}</span></p>
-    <p>amir abbas: <span>${sumAbbas}</span></p>`;
-    average(sumMahdiar, sumAmin, sumAbbas)
+    <p>mahdiar: <span>${information[0].storage}</span></p>
+    <p>amin: <span>${information[1].storage}</span></p>
+    <p>amir abbas: <span>${information[2].storage}</span></p>`;
+    average(information[0].storage, information[1].storage, information[2].storage);
+    // average(sumMahdiar, sumAmin, sumAbbas)
 }
 // average
 // صدا زده شده workMofid داخل

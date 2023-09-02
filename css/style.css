@@ -234,7 +234,7 @@ body {
   font-size: 15px;
 }
 
-.news .activites-container,
+.news .first-one-container,
 .news .last-one-container {
   display: -ms-grid;
   display: grid;
@@ -243,18 +243,10 @@ body {
 }
 
 .news p {
-  margin: 10px 0;
+  margin: 10px 5px;
 }
 
-.mofid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
+.useful,
 .average {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,7 +258,6 @@ body {
 
 .title-news {
   text-align: center;
-  margin-bottom: 15px;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -274,7 +265,6 @@ body {
 
 .last-update {
   margin-top: 30px;
-  text-align: center;
   font-size: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
