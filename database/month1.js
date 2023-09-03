@@ -1,7 +1,7 @@
 let month1Mahdiar = [
     { date: "1402/06/09", day: "thursday", code: "85", learn: "0", english: "35", study: "0", wasted: "120" },
     { date: "1402/06/10", day: "friday", code: "18", learn: "0", english: "0", study: "0", wasted: "120" },
-    // { date: "1402/06/11", day: "saturday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/06/11", day: "saturday", code: "106", learn: "50", english: "11", study: "0", wasted: "150" },
     // { date: "1402/06/12", day: "sunday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/13", day: "monday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/14", day: "tuesday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
@@ -33,7 +33,7 @@ let month1Mahdiar = [
 let month1Amin = [
     { date: "1402/06/09", day: "thursday", code: "90", learn: "30", english: "0", study: "0", wasted: "90" },
     { date: "1402/06/10", day: "friday", code: "0", learn: "60", english: "0", study: "0", wasted: "180" },
-    // { date: "1402/06/11", day: "saturday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/06/11", day: "saturday", code: "0", learn: "90", english: "0", study: "0", wasted: "240" },
     // { date: "1402/06/12", day: "sunday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/13", day: "monday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/14", day: "tuesday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
@@ -65,7 +65,7 @@ let month1Amin = [
 let month1Abbas = [
     { date: "1402/06/09", day: "thursday", code: "125", learn: "60", english: "0", study: "0", wasted: "120" },
     { date: "1402/06/10", day: "friday", code: "50", learn: "0", english: "0", study: "0", wasted: "150" },
-    // { date: "1402/06/11", day: "saturday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/06/11", day: "saturday", code: "50", learn: "0", english: "0", study: "0", wasted: "120" },
     // { date: "1402/06/12", day: "sunday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/13", day: "monday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     // { date: "1402/06/14", day: "tuesday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
