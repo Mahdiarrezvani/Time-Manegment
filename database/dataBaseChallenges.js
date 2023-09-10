@@ -1,12 +1,12 @@
 export const dataBase = {
     //!                                         code
     //?                                  doing  doing  doing
-    code: [
+    usefulWorks: [
         {
-            infoChallenge: { start: '0000/00/00', end: '0000/00/00', period: 0, target: 0 },
-            mahdiar: { name: 'mahdiar', state: '👎', result: 0, arrayChallengeProcess: [0] },
-            amin: { name: 'amin', state: '👎', result: 0, arrayChallengeProcess: [0] },
-            abbas: { name: 'abbas', state: '👎', result: 0, arrayChallengeProcess: [0] }
+            infoChallenge: { start: '1402/06/18', end: '1402/06/27', period: 10, target: 3000 },
+            mahdiar: { name: 'mahdiar', state: '👎', result: 0, arrayChallengeProcess: [211] },
+            amin: { name: 'amin', state: '👎', result: 0, arrayChallengeProcess: [180] },
+            abbas: { name: 'abbas', state: '👎', result: 0, arrayChallengeProcess: [100] }
         },
     ],
 }
