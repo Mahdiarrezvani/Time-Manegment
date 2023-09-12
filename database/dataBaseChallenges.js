@@ -4,9 +4,9 @@ export const dataBase = {
     usefulWorks: [
         {
             infoChallenge: { start: '1402/06/18', end: '1402/06/27', period: 10, target: 3000 },
-            mahdiar: { name: 'mahdiar', state: '👎', result: 0, arrayChallengeProcess: [211, 183] },
-            amin: { name: 'amin', state: '👎', result: 0, arrayChallengeProcess: [180, 237] },
-            abbas: { name: 'abbas', state: '👎', result: 0, arrayChallengeProcess: [100, 144] }
+            mahdiar: { name: 'mahdiar', state: '👎', result: 0, arrayChallengeProcess: [211, 183, 136] },
+            amin: { name: 'amin', state: '👎', result: 0, arrayChallengeProcess: [180, 237, 125] },
+            abbas: { name: 'abbas', state: '👎', result: 0, arrayChallengeProcess: [100, 144, 165] }
         },
     ],
 }
