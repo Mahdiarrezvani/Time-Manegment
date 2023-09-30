@@ -27,8 +27,8 @@ let month1Mahdiar = [
     { date: "1402/07/03", day: "monday", code: "108", learn: "33", english: "0", study: "34", wasted: "180" },
     { date: "1402/07/04", day: "tuesday", code: "40", learn: "62", english: "0", study: "33", wasted: "180" },
     { date: "1402/07/05", day: "wednesday", code: "162", learn: "39", english: "0", study: "47", wasted: "120" },
-    // { date: "1402/07/06", day: "thursday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
-    // { date: "1402/07/07", day: "friday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/07/06", day: "thursday", code: "107", learn: "31", english: "0", study: "21", wasted: "200" },
+    { date: "1402/07/07", day: "friday", code: "74", learn: "37", english: "0", study: "48", wasted: "90" },
 ];
 let month1Amin = [
     { date: "1402/06/09", day: "thursday", code: "90", learn: "30", english: "0", study: "0", wasted: "90" },
@@ -59,8 +59,8 @@ let month1Amin = [
     { date: "1402/07/03", day: "monday", code: "77", learn: "85", english: "0", study: "0", wasted: "180" },
     { date: "1402/07/04", day: "tuesday", code: "125", learn: "10", english: "0", study: "15", wasted: "180" },
     { date: "1402/07/05", day: "wednesday", code: "0", learn: "38", english: "0", study: "0", wasted: "250" },
-    // { date: "1402/07/06", day: "thursday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
-    // { date: "1402/07/07", day: "friday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/07/06", day: "thursday", code: "101", learn: "20", english: "0", study: "2", wasted: "120" },
+    { date: "1402/07/07", day: "friday", code: "57", learn: "0", english: "0", study: "0", wasted: "180" },
 ];
 let month1Abbas = [
     { date: "1402/06/09", day: "thursday", code: "125", learn: "60", english: "0", study: "0", wasted: "120" },
@@ -91,7 +91,7 @@ let month1Abbas = [
     { date: "1402/07/03", day: "monday", code: "50", learn: "0", english: "9", study: "0", wasted: "0" },
     { date: "1402/07/04", day: "tuesday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
     { date: "1402/07/05", day: "wednesday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
-    // { date: "1402/07/06", day: "thursday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
-    // { date: "1402/07/07", day: "friday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/07/06", day: "thursday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
+    { date: "1402/07/07", day: "friday", code: "0", learn: "0", english: "0", study: "0", wasted: "0" },
 ];
 export { month1Mahdiar, month1Amin, month1Abbas };
